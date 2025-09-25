@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi there</title>
+    <title>Henderson High School Sports</title>
 </head>
 <body>
-    
+    <a href = 'https://www.hhs.school.nz/' target="_blank"><img src = 'hendersonhigh.png' alt = 'Henderson High School Logo' class = 'Henderson High School Logo'></a>
+    <div id="sidebar">  <!-- Navbar -->
+        <ul>
+            <li><a href="index.html" id = 'current'>Home</a></li>
+            <li>
+                <a href="#" id = 'sports'>Sports ▾</a>
+                <ul class="dropdown">  <!-- Dropdown all sports -->
+                    <li><a href="basketball.html" target="_blank">Basketball</a></li>
+                    <li><a href="football.html" target="_blank">Football</a></li>
+                </ul>
+            </li>
+            <li><a href="#draws">Draws</a></li>
+        </ul>
+    </div>
+    <div id = 'top'>
+        <button class="openbtn" onclick="openNav()">☰ Menu</button>   <!-- Click button to expand nav -->
+        <h1>Henderson High School <br> Sport</h1>
+        <h3>Home of the U17 and U15 Basketball Champions</h3>
+    </div>
+
 </body>
 </html>
