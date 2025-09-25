@@ -9,6 +9,29 @@
     <title>Henderson High School Sports</title>
     <style>
 
+        h1 {
+            padding-top: 2%;
+            font-size: 30px;
+            color: rgba(245, 245, 245, 0.909);
+            font-family: Arial, Helvetica, sans-serif;
+            font-family: "Cinzel", serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .logo {
+            display: inline;
+            color: white;
+            padding: 6px 26px 0;
+            position: fixed;
+            z-index: 999;
+            height: 210px;
+            size: 40px;
+            width: 220px;
+        }
+
+       /*Styling navbar*/ 
        #sidebar {
             background-color: #9b2743;
             border-color: black;
@@ -19,14 +42,19 @@
             right: 0;
             padding-left: 18%;
             z-index: 800;
-            display: none;
-            transition: all 0.5s ease-out;
+            height: 100px;
+            overflow: visible;
+            transition: height 0.2s ease-out;
+            top: 0;
+            position: fixed;
         }
 
-        #sidebar.close {
-            width:60px;
-            transition: all 0.5s ease-out;
+        #sidebar.open {
+            height: 0;
+            transition: height 0.2s ease-out;
+            overflow: hidden;
         }
+
 
         #sidebar > ul > li > a {
             color: rgba(245, 245, 245, 0.909);
@@ -39,7 +67,14 @@
             color: rgba(245, 245, 220, 0.504);
             font-size: 25px;
         }
+        
+        #sidebar > .current {
+            margin-left: 50%;
+        }
+
             
+
+        /*Nav bar buttons*/
         ul {
             margin-left: 48%;
             margin-top: -72px;
@@ -72,7 +107,7 @@
             display: none;
             box-shadow: 1px 1px 1px 1px rgb(169,169,169) ;
             margin-left: 30px;
-            margin-top: 1%;
+            margin-top: -5px;
         }
 
         ul li a:hover {
@@ -82,32 +117,10 @@
         ul li:hover ul.dropdown {
             display: block;
         }
-
-
-        #sidebar > .current {
-            margin-left: 50%;
-        }
-
-        .logo {
-            display: inline;
-            color: white;
-            padding: 10px 26px 0;
-            position: absolute;
-            z-index: 999;
-            height: 210px;
-            size: 40px;
-            width: 220px;
-        }
-
-        .logo, #sidebar {
-            position: fixed;
-            top: 0;
-        }
-
-        /*Start of expanding nav bar*/
-
+        
+        /* Nav bar toggle button */
         .openbtn {
-            font-size: 20px;
+            font-size: 17px;
             cursor: pointer;
             background-color: #242547;
             color: white;
@@ -118,23 +131,12 @@
             z-index: 800;
             top: 0;
             right: 0;
-            transition: all 0.3s ease-out;
+            transition: all 0.2s ease-out;
             }
 
         .openbtn:hover {
-            font-size: 25px;
-            transition: all 0.3s ease-out;
-        }
-
-        h1 {
-            padding-top: 2%;
-            font-size: 30px;
-            color: rgba(245, 245, 245, 0.909);
-            font-family: Arial, Helvetica, sans-serif;
-            font-family: "Cinzel", serif;
-            font-optical-sizing: auto;
-            font-weight: 700;
-            font-style: normal;
+            font-size: 22px;
+            transition: all 0.2s ease-out;
         }
         
     </style>
@@ -157,17 +159,12 @@
     </div>
     <div id = 'top'>
         <button class="openbtn" onclick="openNav()">☰ Menu</button>   <!-- Click button to expand nav -->
-    </div>
     <script>
         function openNav() {
-            document.getElementById("sidebar").style.height = "114px";
-            var x = document.getElementById("sidebar");
-            if (x.style.display === "block") {
-                x.style.display = "none";
-            } else {
-                x.style.display = "block";
-            }
+            var sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("open");
         }
+    </script>
     </script>
 </body>
 </html>
